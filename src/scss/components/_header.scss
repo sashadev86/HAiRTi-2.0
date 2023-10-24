@@ -1,0 +1,42 @@
+.header {
+  border-bottom: 1px solid rgba(228, 228, 228, 0.13);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__block {
+    height: rem(64);
+    display: flex;
+    align-items: center;
+  }
+
+  & {
+    .logo__link {
+      height: rem(64);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+    }
+
+    .logo__image {
+      transform: rotate(-8deg);
+    }
+  }
+
+  @include mediaBigDesktop {
+    & {
+      .logo__link {
+        height: big(64);
+      }
+
+      &__block {
+        height: big(64);
+      }
+    }
+  }
+}

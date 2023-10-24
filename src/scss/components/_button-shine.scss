@@ -1,0 +1,37 @@
+.button {
+  &__shine {
+    position: relative;
+    overflow: hidden;
+
+    @include hover {
+      &::after {
+        content: "";
+        display: block;
+        width: 40%;
+        height: 100%;
+        background: radial-gradient(
+          ellipse at center,
+          #fcb30a,
+          transparent 100%
+        );
+        opacity: 0.7;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        animation: shine 300ms linear;
+        transform: skewX(-45deg);
+        z-index: 0;
+      }
+    }
+  }
+
+  @keyframes shine {
+    0% {
+      left: -45%;
+    }
+
+    100% {
+      left: 100%;
+    }
+  }
+}

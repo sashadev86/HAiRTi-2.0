@@ -1,0 +1,43 @@
+/* stylelint-disable */
+
+@mixin for-desktop {
+  @media (min-width: #{rem(1025)}) {
+    @content;
+  }
+}
+
+@mixin big-desktop {
+  @media (max-width: #{rem(1400)}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{rem(1024)}) {
+    @content;
+  }
+}
+
+@mixin small-tablet {
+  @media (max-width: #{rem(768)}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{rem(576)}) {
+    @content;
+  }
+}
+
+@mixin mediaBigDesktop {
+  @media screen and (min-width: #{rem(1537)}) {
+    @content;
+  }
+}
+
+@mixin media($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}

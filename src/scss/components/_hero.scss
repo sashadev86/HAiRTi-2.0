@@ -1,0 +1,28 @@
+.hero {
+  padding-top: rem(8);
+
+  &__nav {
+    margin-bottom: rem(64);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin-bottom: rem(32);
+
+    font-size: rem(72);
+    font-weight: 700;
+    line-height: 100%;
+    color: var(--colors-white);
+  }
+
+  & .social {
+    margin-bottom: rem(64);
+
+    justify-content: flex-start;
+  }
+
+  
+}
