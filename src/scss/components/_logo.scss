@@ -1,0 +1,11 @@
+.logo {
+  &__image {
+    width: rem(144);
+    height: rem(144);
+
+    @include mediaBigDesktop {
+      width: big(144);
+      height: big(144);
+    }
+  }
+}

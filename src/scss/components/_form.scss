@@ -4,17 +4,27 @@
   justify-content: flex-start;
   gap: rem(8);
 
+  @include mediaBigDesktop {
+    gap: big(8);
+  }
+
   &__promo {
     position: relative;
 
-    max-width: rem(254);
+    max-width: rem(236);
     width: 100%;
     height: rem(56);
     display: flex;
     align-items: center;
 
+    @include mediaBigDesktop {
+      max-width: big(236);
+
+      height: big(56);
+    }
+
     &-button {
-      padding: rem(20) rem(32) rem(20) rem(16);
+      padding: rem(20) rem(16) rem(20) rem(16);
 
       position: absolute;
 
@@ -33,6 +43,12 @@
       transition: opacity var(--animation-timing) var(--animation-transition),
         visibility var(--animation-timing) var(--animation-transition);
 
+      @include mediaBigDesktop {
+        padding: big(20) big(16) big(20) big(16);
+
+        gap: big(16);
+      }
+
       &-image {
         width: rem(18);
         height: rem(18);
@@ -40,6 +56,11 @@
         fill: var(--colors-silver);
 
         transition: fill var(--animation-timing) var(--animation-transition);
+
+        @include mediaBigDesktop {
+          width: big(18);
+          height: big(18);
+        }
       }
 
       &-description {
@@ -50,6 +71,14 @@
         color: var(--colors-white);
 
         transition: color var(--animation-timing) var(--animation-transition);
+
+        &--contacts {
+          display: none;
+        }
+
+        @include mediaBigDesktop {
+          font-size: big(18);
+        }
       }
 
       @include hover {
@@ -76,10 +105,17 @@
     }
 
     &-placeholder {
+      padding-left: rem(32);
+
       position: absolute;
-      top: 50%;
-      left: rem(32);
-      transform: translateY(-50%);
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      align-items: center;
 
       font-family: var(--font-family-secondary);
       font-size: rem(18);
@@ -87,16 +123,31 @@
       line-height: 120%;
       color: var(--colors-white);
       user-select: none;
+      cursor: text;
 
       transition: font-size var(--animation-timing) var(--animation-transition),
         top var(--animation-timing) var(--animation-transition),
         color var(--animation-timing) var(--animation-transition);
+
+      @include mediaBigDesktop {
+        padding-left: big(32);
+
+        font-size: big(18);
+      }
+    }
+
+    @include hover {
+      & .form__input {
+        border-color: var(--colors-silver);
+      }
     }
   }
 
   &__input {
-    padding: rem(17) rem(29);
+    padding: rem(20) rem(32);
 
+    width: 100%;
+    max-width: rem(236);
     height: rem(56);
 
     font-family: var(--font-family-secondary);
@@ -112,32 +163,112 @@
 
     transition: border-color var(--animation-timing) var(--animation-transition);
 
-    @include hover {
-      border-color: var(--colors-silver);
-    }
-
     &:focus-visible {
       border-color: var(--colors-silver);
     }
 
     &:focus-visible + .form__label-placeholder,
     &:not(:placeholder-shown) + .form__label-placeholder {
-      top: 20%;
+      top: -30%;
 
       font-size: rem(12);
       color: var(--colors-white-50);
     }
+
+    & ~ .just-validate-error-label {
+      position: absolute;
+      top: rem(-20);
+      left: 0;
+
+      font-family: var(--font-family-secondary);
+      font-size: rem(14);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    @include mediaBigDesktop {
+      padding: big(20) big(32);
+
+      max-width: big(236);
+      height: big(56);
+
+      font-size: big(18);
+
+      border: big(3) solid var(--colors-dark-gray);
+
+      &:focus-visible + .form__label-placeholder,
+      &:not(:placeholder-shown) + .form__label-placeholder {
+        font-size: big(12);
+      }
+
+      & ~ .just-validate-error-label {
+        top: big(-20);
+
+        font-size: big(14);
+      }
+    }
   }
 
   &__button {
-    background: linear-gradient(
-      90deg,
-      var(--colors-grey) 0%,
-      var(--colors-gainsboro) 25%,
-      var(--colors-grey) 50%,
-      var(--colors-gainsboro) 75%,
-      var(--colors-grey) 100%
-    );
+    padding: rem(20) rem(32);
+
+    position: relative;
+    overflow: hidden;
+
+    height: rem(56);
+
+    display: flex;
+    align-items: center;
+
+    font-family: var(--font-family-secondary);
+    font-size: rem(18);
+    font-weight: 400;
+    line-height: 120%;
+    color: var(--colors-black);
+
+    background: var(--colors-silver-gradient);
+    border-radius: var(--radius-32);
+
+    @include hover {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        z-index: 0;
+
+        width: 40%;
+        height: 100%;
+
+        background: radial-gradient(
+          ellipse at center,
+          var(--colors-gainsboro),
+          transparent 100%
+        );
+        opacity: 1;
+
+        transform: skewX(-45deg);
+        animation: shine 300ms linear;
+      }
+    }
+
+    @keyframes shine {
+      0% {
+        left: -45%;
+      }
+
+      100% {
+        left: 100%;
+      }
+    }
+
+    @include mediaBigDesktop {
+      padding: big(20) big(32);
+
+      height: big(56);
+
+      font-size: big(18);
+    }
   }
 
   .is-promo-active {
@@ -148,28 +279,5 @@
   .is-promo-hidden {
     opacity: 0;
     visibility: hidden;
-  }
-
-  @include mediaBigDesktop {
-    & {
-      gap: big(8);
-
-      &__promo {
-        &-button {
-          padding: big(20) big(32) big(20) big(16);
-
-          gap: big(16);
-
-          &-image {
-            width: big(18);
-            height: big(18);
-          }
-
-          &-description {
-            font-size: big(18);
-          }
-        }
-      }
-    }
   }
 }

@@ -40,6 +40,9 @@
     &-image {
       z-index: 1;
 
+      width: rem(32);
+      height: rem(32);
+
       border-radius: var(--radius-100);
     }
 
@@ -57,6 +60,11 @@
         gap: big(16);
 
         font-size: big(16);
+
+        &-image {
+          width: big(32);
+          height: big(32);
+        }
       }
     }
   }

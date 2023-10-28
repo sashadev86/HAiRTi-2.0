@@ -1,0 +1,65 @@
+.fancybox__toolbar {
+  --f-button-width: #{rem(48)};
+  --f-button-height: #{rem(48)};
+
+  --f-button-color: var(--colors-black);
+  --f-button-hover-color: var(--colors-black);
+
+  --f-button-bg: var(--colors-silver-gradient);
+  --f-button-hover-bg: var(--colors-silver-gradient);
+  --f-button-active-bg: var(--colors-silver-gradient);
+
+  --f-button-svg-stroke-width: 3;
+  --f-button-svg-filter: none;
+
+  --f-button-border-radius: var(--radius-100);
+
+  padding: rem(24);
+
+  @include mediaBigDesktop {
+    --f-button-width: #{big(48)};
+    --f-button-height: #{big(48)};
+
+    padding: big(24);
+  }
+}
+
+.fancybox__nav {
+  --f-button-next-pos: 0;
+  --f-button-prev-pos: 0;
+
+  --f-button-width: #{rem(48)};
+  --f-button-height: #{rem(128)};
+
+  --f-button-color: var(--colors-black);
+  --f-button-hover-color: var(--colors-black);
+
+  --f-button-bg: var(--colors-white);
+  --f-button-hover-bg: var(--colors-white);
+  --f-button-active-bg: var(--colors-white);
+
+  --f-button-border-radius: var(--radius-100);
+
+  --f-button-svg-height: #{rem(24)};
+  --f-button-svg-width: #{rem(24)};
+
+  --f-button-svg-stroke-width: 3;
+  --f-button-svg-filter: none;
+
+  @include mediaBigDesktop {
+    --f-button-width: #{big(48)};
+    --f-button-height: #{big(128)};
+
+    --f-button-svg-height: #{big(24)};
+    --f-button-svg-width: #{big(24)};
+  }
+}
+
+.fancybox__backdrop {
+  --fancybox-bg: rgba(0 0 0 0.7);
+  backdrop-filter: blur(#{rem(45)});
+
+  @include mediaBigDesktop {
+    backdrop-filter: blur(#{big(45)});
+  }
+}

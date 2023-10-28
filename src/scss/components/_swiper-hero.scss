@@ -1,0 +1,28 @@
+.hero {
+  &__swiper {
+    max-width: rem(288);
+    width: 100%;
+    max-height: rem(544);
+
+
+    &-slide {
+      border: rem(8) solid #0D0D0D;
+      border-radius: var(--radius-32);
+    }
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      border-radius: var(--radius-24);
+    }
+
+    @include mediaBigDesktop {
+      max-width: big(288);
+      max-height: big(544);
+
+      &-slide {
+        border: big(8) solid #0D0D0D;
+      }
+    }
+  }
+}

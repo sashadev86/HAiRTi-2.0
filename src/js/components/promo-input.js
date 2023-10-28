@@ -1,20 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const promoButton = document.querySelector(".promo-button");
-  const promoLabel = document.querySelector(".promo-label");
-  const promoInput = document.querySelector('.promo-input');
+  const promoButton = document.querySelectorAll(".promo-button");
+  const promoLabel = document.querySelectorAll(".promo-label");
+  const promoInput = document.querySelectorAll('.promo-input');
+  const TIME_100_MS = 100;
 
-  promoButton.addEventListener("click", () => {
-    promoButton.classList.add('is-promo-hidden');
-    promoLabel.classList.add("is-promo-active");
-    console.dir(promoInput);
-    promoInput.focus();
-  });
+  promoButton.forEach((item, index) => {
+    item.addEventListener("click", () => {
+      item.classList.add('is-promo-hidden');
+      promoLabel[index].classList.add("is-promo-active");
 
-  promoInput.addEventListener("blur", () => {
-    console.log(promoInput.value);
-    if (promoInput.value === "") {
-      promoLabel.classList.remove("is-promo-active");
-      promoButton.classList.remove("is-promo-hidden");
-    }
-  });
+      setTimeout(() => {
+        promoInput[index].focus();
+      }, TIME_100_MS);
+    });
+  })
+
+  promoInput.forEach((item, index) => {
+    item.addEventListener("blur", () => {
+      if (item.value === "") {
+        promoLabel[index].classList.remove("is-promo-active");
+        promoButton[index].classList.remove("is-promo-hidden");
+      }
+    });
+  })
 });
