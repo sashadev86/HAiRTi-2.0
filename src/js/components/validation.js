@@ -1,7 +1,7 @@
 import { validateForms } from "../functions/validate-forms";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const rules1 = [
+  const rules = [
     {
       ruleSelector: ".input-name",
       rules: [
@@ -35,6 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Произошла отправка, тут можно писать любые действия");
   };
 
-  validateForms(".hero__content .form-validate", rules1, afterForm);
-  validateForms(".contacts__content .form-validate", rules1, afterForm);
+  validateForms(".hero__content .form-validate", rules, afterForm);
+  validateForms(".contacts__content .form-validate", rules, afterForm);
 });

@@ -1,3 +1,4 @@
+import './components/animations';
 import './components/header-show';
 import './components/promo-input';
 import './components/swiper-hero';
