@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = sectionHero.querySelector(".form");
   const slider = sectionHero.querySelector(".hero__swiper");
   const sectionExamples = document.querySelector(".examples");
+  const sectionExamplesContainer = sectionExamples.querySelector(".examples__container");
 
   console.log(sectionHero);
 
@@ -45,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     delay: 2,
   });
 
-  const animationSectionExamples = gsap.from(sectionExamples, {
+  const animationSectionExamples = gsap.from(sectionExamplesContainer, {
     opacity: 0,
     y: 50,
     duration: 1,
@@ -74,16 +75,12 @@ document.addEventListener("DOMContentLoaded", () => {
   pathPrice.style.strokeDashoffset = pathPrice.getTotalLength(); // Начинаем с полной длины
 
   // Создайте анимацию с GSAP
-  const heroAnimation = gsap.to(pathPrice, {
-    strokeDashoffset: 0,
-    duration: 2.2,
-    ease: "power1.inOut",
-  });
+  const heroAnimation = gsap.to(pathPrice, { strokeDashoffset: 0, duration: 2.7, ease: "power1.inOut" });
 
   // ScrollTrigger к анимации
   ScrollTrigger.create({
     trigger: ".price",
-    start: "top center", // Начинаем анимацию, когда верхнее "top" содержимое секции становится видимым в центре "center" окна просмотра.
+    start: "top 70% bottom 30%", // Начинаем анимацию, когда верхнее "top" содержимое секции становится видимым в центре "center" окна просмотра.
     animation: heroAnimation, // Запускаем анимацию
     toggleActions: "play none none reverse", // Определяет, что делать при скроллинге
     // markers: true, // Полезно для отладки
@@ -93,11 +90,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Секции
   const priceSection = document.querySelector(".price");
+  const priceSectionContainer = priceSection.querySelector(".price__container");
   const contactsSection = document.querySelector(".contacts");
+  const contactsSectionContainer = contactsSection.querySelector(".contacts__container")
   const footerSection = document.querySelector(".footer");
+  const footerSectionContainer = footerSection.querySelector(".footer__container");
 
   // Анимация для секции "Price"
-  const priceAnimation = gsap.from(priceSection, {
+  const priceAnimation = gsap.from(priceSectionContainer, {
     opacity: 0,
     x: 100, // Плавное появление справа
     duration: 1.1,
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Анимация для секции "Contacts"
-  const contactsAnimation = gsap.from(contactsSection, {
+  const contactsAnimation = gsap.from(contactsSectionContainer, {
     opacity: 0,
     x: -100, // Плавное появление с лево
     duration: 1.1,
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Анимация для секции "Footer"
-  const footerAnimation = gsap.from(footerSection, {
+  const footerAnimation = gsap.from(footerSectionContainer, {
     opacity: 0,
     y: 100, // Плавное появление снизу
     duration: 1.1,
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ScrollTrigger для секции "Price"
   ScrollTrigger.create({
-    trigger: priceSection,
+    trigger: priceSectionContainer,
     start: "top 80%", // Начало анимации, когда секция "Price" находится на 80% высоты вьюпорта
     end: "bottom 20%", // Завершение анимации, когда секция "Price" находится на 20% высоты вьюпорта
     // markers: true, // Маркеры для отладки
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ScrollTrigger для секции "Contacts"
   ScrollTrigger.create({
-    trigger: contactsSection,
+    trigger: contactsSectionContainer,
     start: "top 80%", // Начало анимации, когда секция "Contacts" находится на 80% высоты вьюпорта
     end: "bottom 20%", // Завершение анимации, когда секция "Contacts" находится на 20% высоты вьюпорта
     // markers: true, // Маркеры для отладки
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ScrollTrigger для секции "Footer"
   ScrollTrigger.create({
-    trigger: footerSection,
+    trigger: footerSectionContainer,
     start: "top bottom", // Начало анимации, когда секция "Footer" находится на 80% высоты вьюпорта
     end: "top center", // Завершение анимации, когда секция "Footer" находится на 20% высоты вьюпорта
     // markers: true, // Маркеры для отладки
