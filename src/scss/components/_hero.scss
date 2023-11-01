@@ -16,6 +16,46 @@
     z-index: -1;
 
     width: 100%;
+
+    @include big-desktop {
+      display: none;
+    }
+  }
+
+  &__picture {
+    display: none;
+
+    @include big-desktop {
+      & {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+
+        display: flex;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: linear-gradient(
+            180deg,
+            rgba(13, 13, 13, 0.6) 0%,
+            #0d0d0d 100%
+          );
+        }
+      }
+
+      &-image {
+        width: 100%;
+        object-position: 55% 15%;
+      }
+    }
   }
 
   &__container {
@@ -25,6 +65,10 @@
 
     @include mediaBigDesktop {
       gap: big(96);
+    }
+
+    @include big-desktop {
+      --container-offset: #{rem(72)};
     }
   }
 

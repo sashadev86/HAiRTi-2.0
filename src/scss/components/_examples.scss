@@ -13,6 +13,10 @@
     @include mediaBigDesktop {
       padding-top: big(32);
     }
+
+     @include big-desktop {
+      --container-offset: #{rem(72)};
+    }
   }
 
   &__title {
@@ -106,6 +110,10 @@
     &-next {
       right: 0;
     }
+
+    @include small-tablet {
+      display: none;
+    }
   }
 
   &__gradient {
@@ -128,6 +136,10 @@
     &-right {
       right: 0;
       background: linear-gradient(90deg, rgba(13, 13, 13, 0.00) 0%, #0D0D0D 100%);
+    }
+
+    @include mobile {
+      width: rem(22);
     }
   }
 }

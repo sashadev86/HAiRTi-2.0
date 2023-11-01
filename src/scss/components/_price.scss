@@ -24,6 +24,14 @@
     @include mediaBigDesktop {
       padding-top: big(48);
     }
+
+    @include big-desktop {
+      --container-offset: #{rem(72)};
+    }
+
+    @include big-tablet {
+      --container-offset: #{rem(15)};
+    }
   }
 
   &__content {
@@ -33,6 +41,18 @@
 
     @include mediaBigDesktop {
       gap: big(128);
+    }
+
+    @include big-desktop {
+      gap: rem(96);
+    }
+
+    @include big-tablet {
+      gap: rem(32);
+    }
+
+    @include small-tablet {
+      column-count: 1;
     }
   }
 
@@ -48,6 +68,14 @@
       margin-bottom: big(87);
 
       font-size: big(48);
+    }
+
+    @include small-tablet {
+      margin-bottom: rem(40);
+    }
+
+    @include big-mobile {
+      font-size: rem(28);
     }
   }
 
@@ -83,11 +111,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: rem(10);
 
     border-top: 1px solid rgba(228, 228, 228, 0.13);
 
     @include mediaBigDesktop {
       padding: big(12) 0;
+
+      gap: big(10);
     }
 
     &-service {
@@ -100,6 +131,10 @@
 
       @include mediaBigDesktop {
         font-size: big(24);
+      }
+
+      @include mobile {
+        font-size: rem(16);
       }
     }
 

@@ -24,5 +24,9 @@
         border: big(8) solid #0D0D0D;
       }
     }
+
+    @include big-desktop {
+      display: none;
+    }
   }
 }

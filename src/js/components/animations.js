@@ -12,9 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = sectionHero.querySelector(".form");
   const slider = sectionHero.querySelector(".hero__swiper");
   const sectionExamples = document.querySelector(".examples");
-  const sectionExamplesContainer = sectionExamples.querySelector(".examples__container");
-
-  console.log(sectionHero);
+  const sectionExamplesContainer = sectionExamples.querySelectorAll(".container");
 
   const animationPageNav = gsap.from(pageNav, {
     opacity: 0,
