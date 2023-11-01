@@ -77,7 +77,7 @@
     align-items: center;
     justify-content: center;
 
-    background-color: var(--colors-white);
+    background: var(--colors-silver-gradient);
     border-radius: var(--radius-100);
 
     @include mediaBigDesktop {
