@@ -14,8 +14,16 @@
       padding-top: big(32);
     }
 
-     @include big-desktop {
+    @include big-desktop {
       --container-offset: #{rem(72)};
+    }
+
+    @include big-tablet {
+      --container-offset: #{rem(15)};
+    }
+
+    @include mobile {
+      padding-top: rem(24);
     }
   }
 
@@ -31,6 +39,12 @@
       margin-bottom: big(48);
 
       font-size: big(36);
+    }
+
+    @include mobile {
+      margin-bottom: rem(40);
+
+      font-size: rem(28);
     }
   }
 
@@ -136,6 +150,10 @@
     &-right {
       right: 0;
       background: linear-gradient(90deg, rgba(13, 13, 13, 0.00) 0%, #0D0D0D 100%);
+    }
+
+    @include small-tablet {
+      width: rem(32);
     }
 
     @include mobile {
