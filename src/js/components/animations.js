@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const priceAnimation = gsap.from(priceSectionContainer, {
     opacity: 0,
     x: 100, // Плавное появление справа
-    duration: 1.1,
+    duration: 1,
     paused: true,
   });
 
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const contactsAnimation = gsap.from(contactsSectionContainer, {
     opacity: 0,
     x: -100, // Плавное появление с лево
-    duration: 1.1,
+    duration: 1,
     paused: true,
   });
 
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const footerAnimation = gsap.from(footerSectionContainer, {
     opacity: 0,
     y: 100, // Плавное появление снизу
-    duration: 1.1,
+    duration: 1,
     paused: true,
   });
 

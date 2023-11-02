@@ -65,8 +65,15 @@ import { disableScroll } from './functions/disable-scroll';
 // const rellax = new Rellax('.rellax');
 
 // Подключение плавной прокрутки к якорям
+
 import SmoothScroll from 'smooth-scroll';
-const scroll = new SmoothScroll('a[href*="#"]');
+const options = {
+  speed: 100, // Скорость прокрутки (по умолчанию 500)
+  offset: 0, // Смещение от якоря (по умолчанию 0)
+  easing: "easeOut", // Функция плавности (по умолчанию 'easeInOutQuart')
+  updateURL: false, // Обновление URL (по умолчанию true)
+};
+const scroll = new SmoothScroll('a[href*="#"]', options);
 
 // Подключение событий свайпа на мобильных
 // import 'swiped-events';

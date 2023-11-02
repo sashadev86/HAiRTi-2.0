@@ -103,6 +103,34 @@
 
     @include small-tablet {
       display: flex;
+
+      &.hidden-burger {
+        display: none;
+      }
+
+      &.active-burger {
+        display: flex;
+      }
+
+    }
+  }
+
+  @include mobile {
+    & .social__link  {
+      padding: 0;
+
+      &-image {
+        &--phone {
+            padding: rem(2);
+            padding-right: rem(6);
+
+          display: block;
+        }
+      }
+
+      &-description {
+        display: none;
+      }
     }
   }
 }
