@@ -70,6 +70,10 @@
     @include big-desktop {
       --container-offset: #{rem(72)};
     }
+
+    @include big-tablet {
+      --container-offset: #{rem(15)};
+    }
   }
 
   &__nav {
