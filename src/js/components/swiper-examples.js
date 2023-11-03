@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (sectionExamples) {
     const swiper2 = new Swiper(".swiper-examples", {
       modules: [Navigation],
-      slidesPerView: 3.75,
+      slidesPerView: 4.2,
       initialSlide: 1,
       spaceBetween: 20,
       loop: true,
@@ -19,11 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       breakpoints: {
         1200: {
-          slidesPerView: 3.75,
+          slidesPerView: 4.2,
           spaceBetween: 20,
         },
         1133: {
-          slidesPerView: 3.4,
+          slidesPerView: 3.6,
         },
         992: {
           slidesPerView: 3.2,
