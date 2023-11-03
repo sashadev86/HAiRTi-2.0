@@ -1,9 +1,9 @@
-import Swiper from 'swiper';
+import Swiper from "swiper";
 import { EffectCards, Autoplay } from "swiper/modules";
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   const sectionHero = document.querySelector(".hero");
-  if(sectionHero) {
+  if (sectionHero) {
     if (window.innerWidth >= 1400) {
       const swiper1 = new Swiper(".swiper-hero", {
         modules: [EffectCards, Autoplay],
@@ -26,5 +26,4 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
-})
-
+});
