@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
         isHeaderVisible = true;
       }
     } else {
+      burger[0]?.classList.remove("burger--active");
       menu.classList.remove("menu--active");
-      burger.classList.remove("burger--active");
       header.classList.remove("active");
       isHeaderVisible = false;
     }

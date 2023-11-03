@@ -6,15 +6,25 @@
   background-repeat: no-repeat;
 }
 
-$browser-context: 16; // Default
+// $browser-context: 16; // Default
 
-@function rem($pixels, $context: $browser-context) {
-  @return math.div($pixels, $context) * 1rem;
+// @function rem($pixels, $context: $browser-context) {
+//   @return math.div($pixels, $context) * 1rem;
+// }
+
+// @function big($pixels) {
+//   @return math.div($pixels, 1920) * 100 * 1vw;
+// }
+
+@function rem($pixels) {
+  @return calc(#{$pixels} / 16 * 1rem);
 }
 
 @function big($pixels) {
-  @return math.div($pixels, 1920) * 100 * 1vw;
+  @return calc(#{$pixels} / 1536 * 100 * 1vw);
 }
+
+
 
 @mixin image-set($pathToImage) {
   background-image: url("#{$pathToImage}.jpg");
