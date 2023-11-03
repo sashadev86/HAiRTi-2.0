@@ -13,12 +13,14 @@
         opacity: 0;
         visibility: hidden;
         display: none;
+
+        transition: opacity var(--animation-timing) var(--animation-transition), visibility var(--animation-timing) var(--animation-transition);
       }
 
       &.menu--active {
         padding: rem(16);
 
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
@@ -33,7 +35,9 @@
         visibility: visible;
         opacity: 1;
 
-        background-color: black;
+        transition: opacity var(--animation-timing) var(--animation-transition), visibility var(--animation-timing) var(--animation-transition);
+
+        background-color: var(--colors-black);
       }
 
       & .logo__link {

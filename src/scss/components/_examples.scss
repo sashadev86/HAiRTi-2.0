@@ -8,7 +8,18 @@
   &__container {
     padding-top: rem(32);
 
-    border-top: 1px solid rgba(228, 228, 228, 0.13);
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: var(--container-offset);
+
+      width: calc(100% - (var(--container-offset)) * 2);
+
+      border-top: 1px solid rgba(228, 228, 228, 0.13);
+    }
 
     @include mediaBigDesktop {
       padding-top: big(32);

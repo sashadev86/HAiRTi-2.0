@@ -13,6 +13,17 @@
     flex-direction: column;
     gap: rem(24);
 
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: var(--container-offset);
+
+      width: calc(100% - (var(--container-offset)) * 2);
+
+      border-top: 1px solid rgba(228, 228, 228, 0.13);
+    }
+
     @include mediaBigDesktop {
       padding-top: big(24);
 
