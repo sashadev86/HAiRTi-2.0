@@ -6,3 +6,4 @@ import './components/validation';
 import './components/swiper-examples';
 import './components/fancybox';
 import './components/map';
+import './components/modal-success';
