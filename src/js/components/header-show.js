@@ -2,9 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".header");
   const burger = document.querySelectorAll("[data-burger]");
   const menu = document.querySelector("[data-menu]");
-
-  console.log(header.querySelector(".burger"));
-
   let lastScrollTop = 0;
   let delta = 5;
   let isHeaderVisible = false;

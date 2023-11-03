@@ -33,7 +33,6 @@ import { enableScroll } from '../functions/enable-scroll';
   });
 
   menuItems?.forEach(el => {
-    console.log(el);
     el.addEventListener('click', () => {
       burger?.forEach(elem => {
         elem?.setAttribute('aria-expanded', 'false');

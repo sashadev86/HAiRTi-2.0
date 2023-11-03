@@ -75,14 +75,101 @@
   }
 
   &__map {
+    position: relative;
+
     min-width: rem(480);
     height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     border-radius: var(--radius-24);
 
     & .ymaps-2-1-79-map,
     & .ymaps-2-1-79-inner-panes {
       border-radius: var(--radius-24);
+    }
+
+    & .loading {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    & .loading__text {
+      position: relative;
+      padding-right: 2rem;
+      opacity: 1;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 3px;
+      color: var(--colors-white);
+
+      animation: blink 3.35s infinite;
+
+      &:after {
+        perspective: 100;
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0.075rem;
+        height: 0rem;
+        width: 0rem;
+        border-bottom: 0.82rem solid currentColor;
+        border-left: 0.4rem solid transparent;
+        border-right: 0.4rem solid transparent;
+        animation: spin 3.24s infinite;
+      }
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        // opacity: 1;
+        transform: rotate3d(1, 1, 1, 0deg);
+      }
+      30% {
+        // opacity: 0;
+        transform: rotate3d(1, 1, 1, 70deg);
+      }
+      50% {
+        // opacity: 1;
+        transform: rotate3d(1, 1, 1, 160deg);
+      }
+      65% {
+        // opacity: 0;
+        transform: rotate3d(1, 1, 1, 245deg);
+      }
+      80% {
+        opacity: 1;
+        transform: rotate3d(1, 1, 1, 310deg);
+      }
+      90% {
+        opacity: 0;
+        transform: rotate3d(1, 1, 1, 345deg);
+      }
+      100% {
+        opacity: 1;
+        transform: rotate3d(1, 1, 1, 360deg);
+      }
     }
 
     @include mediaBigDesktop {
@@ -125,9 +212,9 @@
     @include mediaBigDesktop {
       padding-left: big(16);
 
-    max-width: big(204.5);
+      max-width: big(204.5);
 
-    font-size: big(18);
+      font-size: big(18);
     }
   }
 
@@ -196,7 +283,6 @@
 
   @include mobile {
     & .form {
-
       &__label {
         &-placeholder {
           padding-left: rem(12);
