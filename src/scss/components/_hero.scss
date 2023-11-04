@@ -58,6 +58,52 @@
     }
   }
 
+  & .logo__link {
+    position: relative;
+    overflow: hidden;
+
+    width: rem(144);
+    height: rem(144);
+
+    border-radius: var(--radius-100);
+
+    @include mediaBigDesktop {
+      width: big(144);
+      height: big(144);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top:  0;
+      left: 0;
+      z-index: 1;
+
+      width: 40%;
+      height: 100%;
+
+      background: radial-gradient(
+        ellipse at center,
+        var(--colors-gainsboro),
+        transparent 100%
+      );
+      opacity: 1;
+
+      transform: skewX(-45deg);
+
+      animation: shine 3s infinite linear;
+    }
+
+    @keyframes shine {
+      0% {
+        left: 0%;
+      }
+      100% {
+        left: 100%;
+      }
+    }
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;

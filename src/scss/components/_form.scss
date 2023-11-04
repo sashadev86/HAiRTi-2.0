@@ -213,6 +213,7 @@
     padding: rem(20) rem(32);
 
     position: relative;
+    z-index: 0;
     overflow: hidden;
 
     height: rem(56);
@@ -229,36 +230,34 @@
     background: var(--colors-silver-gradient);
     border-radius: var(--radius-32);
 
-    @include hover {
-      &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        z-index: 0;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      z-index: -1;
 
-        width: 40%;
-        height: 100%;
+      width: 40%;
+      height: 100%;
 
-        background: radial-gradient(
-          ellipse at center,
-          var(--colors-gainsboro),
-          transparent 100%
-        );
-        opacity: 1;
+      background: radial-gradient(
+        ellipse at center,
+        var(--colors-gainsboro),
+        transparent 100%
+      );
+      opacity: 1;
 
-        transform: skewX(-45deg);
-        animation: shine 300ms linear;
-      }
+      transform: skewX(-45deg);
+
+      animation: shine 3s infinite linear;
     }
 
     @keyframes shine {
       0% {
-        left: -45%;
+        left: -350%;
       }
-
       100% {
-        left: 100%;
+        left: 350%;
       }
     }
 

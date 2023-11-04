@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.innerWidth >= 1400) {
       const swiper1 = new Swiper(".swiper-hero", {
         modules: [EffectCards, Autoplay],
-        slidesPerView: 1,
+        slidesPerView: "auto",
         initialSlide: 1,
         spaceBetween: 20,
         centeredSlides: true,

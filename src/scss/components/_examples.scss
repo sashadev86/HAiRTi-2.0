@@ -129,14 +129,30 @@
     }
 
     &-prev {
-      left: 0;
+      left: rem(24);
+
+      @include mediaBigDesktop {
+        left: big(24);
+      }
+
+      @include big-desktop {
+        left: rem(12);
+      }
     }
 
     &-next {
-      right: 0;
+      right: rem(24);
+
+      @include mediaBigDesktop {
+        right: big(24);
+      }
+
+      @include big-desktop {
+        right: rem(12);
+      }
     }
 
-    @include small-tablet {
+    @include big-mobile {
       display: none;
     }
   }
