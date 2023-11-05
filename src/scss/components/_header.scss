@@ -74,26 +74,31 @@
     transform: translateY(0);
   }
 
-  @include big-desktop {
-    & .social__link {
-      padding: 0;
+  @include big-tablet {
+    & .nav__list {
+      gap: rem(10);
+    }
+  }
+
+
+  & .social__link {
+    padding: 0;
+
+    &--phone {
+      padding: rem(8) rem(16);
+    }
+
+    &-image {
+      &--phone {
+        display: none;
+      }
+    }
+
+    &-description {
+      display: none;
 
       &--phone {
-        padding: rem(8) rem(16);
-      }
-
-      &-image {
-        &--phone {
-          display: none;
-        }
-      }
-
-      &-description {
-        display: none;
-
-        &--phone {
-          display: block;
-        }
+        display: block;
       }
     }
   }
