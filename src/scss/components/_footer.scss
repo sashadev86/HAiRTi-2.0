@@ -32,12 +32,12 @@
 
     @include big-desktop {
       --container-offset: #{rem(72)};
-    }
 
-    @include big-tablet {
-      --container-offset: #{rem(15)};
+      @include big-tablet {
+        --container-offset: #{rem(15)};
 
-      gap: rem(32);
+        gap: rem(32);
+      }
     }
   }
 
