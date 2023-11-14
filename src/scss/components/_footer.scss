@@ -1,0 +1,133 @@
+.footer {
+  padding-bottom: rem(64);
+
+  @include mediaBigDesktop {
+    padding-bottom: big(64);
+  }
+
+  &__container {
+    padding-top: rem(24);
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: rem(24);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: var(--container-offset);
+
+      width: calc(100% - (var(--container-offset)) * 2);
+
+      border-top: 1px solid rgba(228, 228, 228, 0.13);
+    }
+
+    @include mediaBigDesktop {
+      padding-top: big(24);
+
+      gap: big(24);
+    }
+
+    @include big-desktop {
+      --container-offset: #{rem(72)};
+
+      @include big-tablet {
+        --container-offset: #{rem(15)};
+
+        gap: rem(32);
+      }
+    }
+  }
+
+  &__information {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include big-tablet {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: rem(32);
+    }
+  }
+
+  &__item {
+    &-mode,
+    &-address {
+      font-family: var(--font-family-secondary);
+      font-size: rem(16);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+      color: var(--colors-white-50);
+
+      @include mediaBigDesktop {
+        font-size: big(16);
+      }
+    }
+
+    &-mode {
+      text-transform: uppercase;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: flex-start;
+    gap: rem(32);
+    flex-wrap: wrap;
+
+    @include mediaBigDesktop {
+      gap: big(32);
+    }
+
+    @include big-tablet {
+      gap: rem(24);
+      row-gap: rem(8);
+    }
+  }
+
+  &__meta {
+    max-width: rem(672);
+
+    font-family: var(--font-family-secondary);
+    font-size: rem(12);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    color: var(--colors-white-50);
+
+    @include mediaBigDesktop {
+      max-width: big(672);
+
+      font-size: big(12);
+    }
+  }
+
+  @include big-mobile {
+    & .social__link {
+      padding: 0;
+
+      &--phone {
+        padding: rem(8) rem(16);
+      }
+
+      &-image {
+        &--phone {
+          display: none;
+        }
+      }
+
+      &-description {
+        display: none;
+
+        &--phone {
+          display: block;
+        }
+      }
+    }
+  }
+}
