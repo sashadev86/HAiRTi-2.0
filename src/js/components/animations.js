@@ -101,10 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //////////////////////////////////////////
 
   // Секции
-  const extensionsSection = document.querySelector(".extensions");
-  const extensionsSectionContainer = extensionsSection.querySelector(
-    ".extensions__container"
-  );
   const priceSection = document.querySelector(".price");
   const priceSectionContainer = priceSection.querySelector(".price__container");
   const contactsSection = document.querySelector(".contacts");
@@ -112,16 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ".contacts__container"
   );
   const footerSection = document.querySelector(".footer");
-  const footerSectionContainer =
-    footerSection.querySelector(".footer__container");
-
-  // Анимация для секции "Extensions"
-  const extensionsAnimation = gsap.from(extensionsSectionContainer, {
-    opacity: 0,
-    x: -100, // Плавное появление справа
-    duration: 1,
-    paused: true,
-  });
+  const footerSectionContainer = footerSection.querySelector(".footer__container");
 
   // Анимация для секции "Price"
   const priceAnimation = gsap.from(priceSectionContainer, {
@@ -145,16 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
     y: 100, // Плавное появление снизу
     duration: 1,
     paused: true,
-  });
-
-  // ScrollTrigger для секции "Extensions"
-  ScrollTrigger.create({
-    trigger: extensionsSectionContainer,
-    start: "top 80%", // Начало анимации, когда секция "Extensions" находится на 80% высоты вьюпорта
-    end: "bottom 20%", // Завершение анимации, когда секция "Extensions" находится на 20% высоты вьюпорта
-    // markers: true, // Маркеры для отладки
-    onEnter: () => extensionsAnimation.play(), // Когда секция "Extensions" видна, начать анимацию
-    onLeaveBack: () => extensionsAnimation.reverse(), // Когда секция "Extensions" скрыта, откатить анимацию
   });
 
   // ScrollTrigger для секции "Price"
