@@ -4,7 +4,7 @@
 - Вся логика написана на чистом JavaScript
 - Весь HTML, SCSS и JavaScript разбиты на модули в ветке dev
 - Для внесения изменений требуется перейти в ветку dev 
-- Деплой сайта на github: [hairti gh-pages](https://banditos86.github.io/HAiRTi-2.0/ "hairti")
+- Деплой сайта на github: [hairti gh-pages](https://sashadev86.github.io/HAiRTi-2.0/ "hairti")
 
 
 ## Стек
